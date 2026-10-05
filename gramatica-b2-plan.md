@@ -25,6 +25,7 @@ Cuando termines un test, devuélveme `subtema`, `página` y `aciertos/total`. Yo
 | 9 | Oraciones de relativo | pendiente |
 | 10 | `used to` / `be used to` / `get used to` | pendiente |
 | 11 | Comparativo y superlativo | pendiente, 7 ejercicios |
+| 12 | Escritura: cuatro estructuras y bloques | para memorizar |
 
 ## Día 11. Comparativo y superlativo
 
@@ -37,6 +38,16 @@ No estaba en los diez días. El 7.1 solo nombraba `not as easy as` y `the best`,
 5. [the … the …, 2](https://test-english.com/grammar-points/b1-b2/the-the-comparatives/2/).
 6. [the … the …, 3](https://test-english.com/grammar-points/b1-b2/the-the-comparatives/3/).
 7. [far / a bit](https://test-english.com/grammar-points/b2/comparative-structures-modifying-comparatives/). Diferencia grande o pequeña. `by far` + superlativo.
+
+## Día 12. Escritura
+
+Cinco bloques para memorizar, no un test.
+
+1. Discuss both views. Intro, view 1, view 2, tu opinión, conclusión.
+2. Opinion / Agree–Disagree. Intro, razón 1, razón 2, conclusión.
+3. Advantages / Disadvantages. Intro, ventajas, desventajas, opinión.
+4. Problem / Solution. Opinión, dos razones, la otra postura, conclusión.
+5. Bloques: comenzar, agregar, explicar, contrastar, concluir.
 
 ## Avance del día 2
 

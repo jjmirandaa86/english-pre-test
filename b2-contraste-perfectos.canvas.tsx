@@ -163,6 +163,18 @@ const DAYS: {
       ["11.7 Grado", "Diferencia grande: far, much, way. Pequeña: a bit, slightly. by far + superlativo.", "Pendiente", "https://test-english.com/grammar-points/b2/comparative-structures-modifying-comparatives/", "far / a bit"],
     ],
   },
+  {
+    day: 12,
+    title: "Escritura",
+    trailing: "Día 12",
+    rows: [
+      ["12.1 Discuss both views", "Intro, view 1, view 2, tu opinión, conclusión.", "Para memorizar", "", ""],
+      ["12.2 Opinion", "Intro, razón 1, razón 2, conclusión.", "Para memorizar", "", ""],
+      ["12.3 Advantages / disadvantages", "Intro, ventajas, desventajas, opinión.", "Para memorizar", "", ""],
+      ["12.4 Problem / solution", "Opinión, dos razones, la otra postura, conclusión.", "Para memorizar", "", ""],
+      ["12.5 Bloques", "Empezar, agregar, explicar, contrastar, concluir.", "Para memorizar", "", ""],
+    ],
+  },
 ];
 
 function tally(scores: string[]) {
@@ -338,6 +350,70 @@ function FallosDia2() {
   );
 }
 
+function EscrituraDia12() {
+  return (
+    <Stack gap={2}>
+      <CollapsibleSection title="Discuss both views" count={5}>
+        <Stack gap={8}>
+          <Text size="small">Some people believe X, while others believe Y. Discuss both views and give your opinion.</Text>
+          <Text size="small" weight="semibold">Intro → view 1 → view 2 → tu opinión → conclusión</Text>
+          <Text size="small">There are different opinions about whether [X] or [Y] is more important. Both views have some advantages, and I believe that the best option depends on the situation.</Text>
+          <Text size="small">On the one hand, some people believe that [X]. One reason for this is that...</Text>
+          <Text size="small">On the other hand, other people believe that [Y]. This is because...</Text>
+          <Text size="small">Personally, I believe that [your opinion]. In my case, ...</Text>
+          <Text size="small">In conclusion, both views have advantages, but I believe that...</Text>
+        </Stack>
+      </CollapsibleSection>
+      <CollapsibleSection title="Opinion / Agree–Disagree" count={4}>
+        <Stack gap={8}>
+          <Text size="small">Do you agree or disagree? What is your opinion? Do you think this is a good idea?</Text>
+          <Text size="small" weight="semibold">Intro → razón 1 → razón 2 → conclusión</Text>
+          <Text size="small">In my opinion, I believe that [topic]. There are several reasons for this.</Text>
+          <Text size="small">First of all, [reason]. This is because [explanation]. For example, [example].</Text>
+          <Text size="small">Another important reason is that [reason]. For example, [example].</Text>
+          <Text size="small">In conclusion, I believe that [your opinion] because [reason 1] and [reason 2].</Text>
+        </Stack>
+      </CollapsibleSection>
+      <CollapsibleSection title="Advantages / Disadvantages" count={4}>
+        <Stack gap={8}>
+          <Text size="small">What are the advantages and disadvantages of studying online?</Text>
+          <Text size="small" weight="semibold">Intro → ventajas → desventajas → opinión</Text>
+          <Text size="small">There are several advantages to...</Text>
+          <Text size="small">One major advantage is that...</Text>
+          <Text size="small">Another benefit is that...</Text>
+          <Text size="small">However, there are also some disadvantages.</Text>
+          <Text size="small">One possible disadvantage is that...</Text>
+          <Text size="small">For example,...</Text>
+          <Text size="small">Overall, I believe that the advantages outweigh the disadvantages because...</Text>
+        </Stack>
+      </CollapsibleSection>
+      <CollapsibleSection title="Problem / Solution" count={4}>
+        <Stack gap={8}>
+          <Text size="small">There are different opinions about [TOPIC]. In my opinion, [YOUR OPINION].</Text>
+          <Text size="small">First of all, [REASON 1]. This is because [EXPLANATION]. For example, [EXAMPLE].</Text>
+          <Text size="small">Another important point is that [REASON 2]. This can help [EXPLANATION]. For instance, [EXAMPLE].</Text>
+          <Text size="small">On the other hand, some people believe that [OTHER VIEW]. This may be true because [REASON].</Text>
+          <Text size="small">In conclusion, I believe that [YOUR OPINION] because [REASON 1] and [REASON 2].</Text>
+        </Stack>
+      </CollapsibleSection>
+      <CollapsibleSection title="Bloques para memorizar" count={5}>
+        <Stack gap={8}>
+          <Text size="small" weight="semibold">Para comenzar</Text>
+          <Text size="small">In my opinion,... There are different opinions about... There are several reasons why... I believe that...</Text>
+          <Text size="small" weight="semibold">Para agregar una idea</Text>
+          <Text size="small">First of all,... Another important point is that... In addition,... Furthermore,...</Text>
+          <Text size="small" weight="semibold">Para explicar</Text>
+          <Text size="small">This is because... The main reason is that... For example,... For instance,...</Text>
+          <Text size="small" weight="semibold">Para contrastar</Text>
+          <Text size="small">However,... On the other hand,... Although... While some people believe..., others argue that...</Text>
+          <Text size="small" weight="semibold">Para concluir</Text>
+          <Text size="small">In conclusion,... Overall,... For these reasons, I believe that...</Text>
+        </Stack>
+      </CollapsibleSection>
+    </Stack>
+  );
+}
+
 function TipsDia1() {
   return (
     <CollapsibleSection title="Qué mejorar" count={5}>
@@ -442,7 +518,9 @@ export default function B2ContrastePerfectos() {
               )
             }
           >
-            {day.day === 1 || day.day === 2 ? (
+            {day.day === 12 ? (
+              <EscrituraDia12 />
+            ) : day.day === 1 || day.day === 2 ? (
               <Stack gap={2}>
                 <CollapsibleSection title="Subtemas" count={day.rows.length}>
                   <DayTopics day={day} />
