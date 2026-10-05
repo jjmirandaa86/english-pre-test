@@ -15,19 +15,87 @@ Cuando termines un test, devuélveme `subtema`, `página` y `aciertos/total`. Yo
 | Día | Tema | Estado |
 | --- | --- | --- |
 | 1 | Contraste de perfectos | en curso, dos tests en 6/10 |
-| 2 | Condicionales, incluido el mixto, más `unless` / `provided` / `as long as` | pendiente |
+| 2 | Condicionales, incluido el mixto, más `unless` / `provided` / `as long as` | 2.5 en 17/20 · día 143/165 |
 | 3 | `wish` / `if only` / `would rather` / `it's time` | pendiente |
 | 4 | Modales de ahora y de pasado | pendiente |
 | 5 | Pasiva, causativa y pasiva de rumor | pendiente |
 | 6 | Estilo indirecto y patrones de reporting verbs | pendiente |
-| 7 | Comparación: `so`/`such`, `too`/`enough` | pendiente |
+| 7 | Comparación: `so`/`such`, `too`/`enough` | el comparativo se practica en el día 11 |
 | 8 | Gerundio o infinitivo | pendiente |
 | 9 | Oraciones de relativo | pendiente |
 | 10 | `used to` / `be used to` / `get used to` | pendiente |
+| 11 | Comparativo y superlativo | pendiente, 7 ejercicios |
+
+## Día 11. Comparativo y superlativo
+
+No estaba en los diez días. El 7.1 solo nombraba `not as easy as` y `the best`, con el índice B2. Los ejercicios son estos.
+
+1. [B1, ejercicio 1](https://test-english.com/grammar-points/b1/comparative-superlative-adjectives-adverbs/). `-er` / `more` + `than`. Nunca `more taller`.
+2. [B1, ejercicio 2](https://test-english.com/grammar-points/b1/comparative-superlative-adjectives-adverbs/2/). `as … as`, `less`, `much` / `a bit`.
+3. [B1, ejercicio 3](https://test-english.com/grammar-points/b1/comparative-superlative-adjectives-adverbs/3/). Superlativo. `in` + lugar. `of` + periodo. `the most I have ever`.
+4. [the … the …, 1](https://test-english.com/grammar-points/b1-b2/the-the-comparatives/).
+5. [the … the …, 2](https://test-english.com/grammar-points/b1-b2/the-the-comparatives/2/).
+6. [the … the …, 3](https://test-english.com/grammar-points/b1-b2/the-the-comparatives/3/).
+7. [far / a bit](https://test-english.com/grammar-points/b2/comparative-structures-modifying-comparatives/). Diferencia grande o pequeña. `by far` + superlativo.
+
+## Avance del día 2
+
+Primer condicional y cláusulas de futuro: ejercicio 1 **7/10**, ejercicio 2 **9/10**, ejercicio 3 **11/15**. Juntos **27/35 (77%)**, aceptable.
+
+Ejercicio 3, la carta de Andy.
+
+- `we have to spend` → `we will have to spend`. `does not arrive` se queda.
+- `as soon as we will check in` → `as soon as we check in`.
+- `she look for` → `she will look for`.
+- `you will water` → `will you water`. Es una pregunta.
+
+Ejercicio 2, ítem 7. Elegiste `before you will leave`. Tiene que ser `before you leave`. `before` va en presente. `will` va en la otra parte.
+
+- `I give you an answer when I have one` → `I will give`. `when I have` se queda.
+- `If you don't find him, you call` → `you should call`.
+- `If he knows that you are here, he tries` → `he might try`.
+
+Test-English, 5 oct 2026.
+
+Segundo condicional: ejercicio 1 **10/10**, ejercicio 2 **10/10**, ejercicio 3 **18/20**. Juntos **38/40**. `if` + pasado, y `would`, `could` o `might` en la otra parte. El día 2 queda en **65/75 (87%)**.
+
+Ejercicio 3, dos fallos.
+
+- `if I spoak` → `if I spoke`. El pasado de speak es spoke. `would have` estaba bien.
+- `If she does not criticise` → `If she didn't criticise`. `would have` estaba bien. if + presente es el primer condicional.
+
+Tercer condicional: ejercicio 1 **10/10**, ejercicio 2 **10/10**, ejercicio 3 **15/20**. Juntos **35/40**. El día 2 queda en **100/115 (87%)**.
+
+Ejercicio 3, el participio.
+
+- `would have tidy up` → `would have tidied up`.
+- `had not meet` → `had not met`.
+- `would have not been born` → `would not have been born`. `not` va entre would y have.
+- `would not have catched` → `would not have caught`.
+- `would have wore` → `would have worn`. `wore` es past simple.
+
+Mixto: ejercicio 1 **8/10**, ejercicio 2 **10/10**, ejercicio 3 **8/10**. Juntos **26/30**. El día 2 queda en **126/145 (87%)**.
+
+Ejercicio 3.
+
+- `had not eatten` → `had not eaten`. El participio de eat es eaten.
+- `We would have been top of the league` → `We would be`. `We are second now`. `hadn't lost` se queda.
+
+`unless`, segundo y tercero juntos: ejercicio 1 **9/10**, ejercicio 2 **8/10**. Juntos **17/20**. El día 2 queda en **143/165 (87%)**.
+
+Ejercicio 2.
+
+- `If she had been more experienced, she would be` → `If she were`. `would be` es ahora.
+- `If the food wasn't so bad, we wouldn't have complained` → `If the food hadn't been`. `wouldn't have complained` es pasado.
+
+- `unless she hadn't helped me` → `unless she had helped me`. `unless` ya significa if not. `hadn't` pone un not de más.
+
+- `If you took a map, we wouldn't be lost now` → `If you had taken`. El resultado es now. El mapa es pasado.
+- `If I hadn't been afraid of flying` → `If I wasn't afraid`. El miedo sigue ahora. El viaje ya pasó: `we'd have travelled`.
 
 ## Avance del día 1
 
-Elegir past simple o present perfect sigue en **6/10**. EnglishPage 5: **8/38**, solo past simple escrito. Simple o continuous: **8/10 (80%)**, aceptable. El siguiente del mismo contraste es EnglishPage 7.
+Elegir past simple o present perfect sigue en **6/10**. EnglishPage 5: **8/38**. Simple o continuous: **8/10 (80%)**, aceptable. Tres pasados: **25/50 (50%)**, punto débil. EnglishPage 11: **6/12**. EnglishPage 13: **8/10 (80%)**, aceptable. EnglishPage 14: **4/13**, punto débil. EnglishPage 7: **5/11**. Los 8 tests del día 1 ya están enviados.
 
 | Subtema | Test | Aciertos | % | Estado |
 | --- | --- | --- | --- | --- |
@@ -35,11 +103,11 @@ Elegir past simple o present perfect sigue en **6/10**. EnglishPage 5: **8/38**,
 | 1.1–1.4 Past simple vs present perfect | Test-English, ejercicio 2 | 6/10 | 60% | punto débil |
 | 1.1–1.4 Past simple vs present perfect | EnglishPage, ejercicio 5 | 8/38 | 21% | punto débil |
 | 1.5 Present perfect simple vs continuous | Test-English B1–B2 | 8/10 | 80% | aceptable |
-| 1.5 Present perfect simple vs continuous | EnglishPage, ejercicio 7 | | | sin hacer |
-| 1.6 Past perfect simple | Test-English, past simple / continuous / perfect | | | sin hacer |
-| 1.6 Past perfect simple | EnglishPage, ejercicio 11 | | | sin hacer |
-| 1.7 Past perfect continuous | EnglishPage, ejercicio 13 | | | sin hacer |
-| 1.8 Los cuatro juntos | EnglishPage, ejercicio 14 | | | sin hacer |
+| 1.5 Present perfect simple vs continuous | EnglishPage, ejercicio 7 | 5/11 | 45% | punto débil |
+| 1.6 Past perfect simple | Test-English, tres pasados | 25/50 | 50% | punto débil |
+| 1.6 Past perfect simple | EnglishPage, ejercicio 11 | 6/12 | 50% | punto débil |
+| 1.7 Past perfect continuous | EnglishPage, ejercicio 13 | 8/10 | 80% | aceptable |
+| 1.8 Los cuatro juntos | EnglishPage, ejercicio 14 | 4/13 | 31% | punto débil |
 
 ### Puntos débiles
 
@@ -51,6 +119,7 @@ Elegir past simple o present perfect sigue en **6/10**. EnglishPage 5: **8/38**,
 Test de posición, 27 sep 2026: **10/10**. Quedó cerrada la posición de `since`, `for`, `before`, `ago`, `yet`, `already`, `just`, `ever` y `never`. `I've just had one` corrige el orden viejo de `just have cleaned`. `I've never been to Prague` usa `been` bien. Sigue sin retestearse `gone` ni el orden noticia-detalle.
 
 5. **Cuántas veces es simple. Cuánto tiempo es continuous.** `zero times` pide `have walked`, no `have been walking`. `all day` con un verbo de acción pide `'ve been doing`, no `'ve done`. `been` con `how long`, en el perro, sí salió bien.
+6. **had solo si ya había terminado antes de la escena.** Si es el siguiente hecho, past simple. Si estaba en marcha cuando pasó otra cosa, past continuous. En los tres pasados esto quedó en 25/50.
 
 `ever`, `before` y `how long` / `since`, que fallaron en el ejercicio 1, en el ejercicio 2 salieron bien. En el ítem 10, `for 22 years` ya terminado sí fue past simple.
 
@@ -63,6 +132,75 @@ Tiene que ser `I stopped smoking two years ago. I smoked for 22 years.`
 `two years ago` nombra un momento ya cerrado. Con `ago`, `yesterday`, `last` o `in` + año no se usa present perfect, aunque el resultado siga siendo cierto (ya no fumas). `I have stopped smoking` es correcto solo cuando no dices cuándo. `stoped` además falla la ortografía: el pasado es `stopped`. El segundo verbo está bien: `smoked for 22 years` porque ese periodo ya terminó. `for` con algo que sigue hasta ahora sería present perfect; `for` con algo que ya acabó es past simple.
 
 ### Registro
+
+#### EnglishPage, ejercicio 7. 30 sep 2026. 5/11.
+
+5 escritos, 5 correctos, todos con `we`: `have been waiting`, `have already ordered`, `have only been`, `have not ordered`, `have been sitting`.
+
+Los 6 del camarero quedaron vacíos. Tercera persona es `has`, no `have`.
+
+- `has forgotten`: el resultado es de ahora, sin fecha.
+- `has taken`: `yet`, y `nobody` es tercera persona.
+- `has walked`: `twenty times` cuenta cuántas. Simple, no continuous.
+- `has even noticed`: `even` va entre `has` y el participio.
+- `has been running`: sigue yendo de mesa en mesa. Duración hasta ahora.
+- `has not looked`: `once` es una acción que no ocurrió. Simple.
+
+`we`, `you`, `they` e `I` van con `have`. `he`, `she`, `it` y `nobody` van con `has`.
+
+#### EnglishPage, ejercicio 13. 30 sep 2026. 8/10.
+
+8 escritos, 8 correctos: `had had`, `had been waiting` (dos veces), `had arranged`, `had already picked`, `had almost given`, `had been late`, `had missed`.
+
+**try.** `for months` es duración hasta anoche. Es `had been trying`. La misma forma que `had been waiting`, que sí escribiste.
+
+**go.** Después de `had almost given up`, entrar al teatro sin vosotros es `had gone`.
+
+#### EnglishPage, ejercicio 14. 30 sep 2026. 4/13.
+
+Bien: `had been working`, `had seen`, `sailed`, `had experienced`. La página acepta `sailed` en la frase de `by the time`; `had sailed` también vale. No hay ninguna forma mal escrita. Los 9 vacíos cuentan como fallo.
+
+Vacíos: `have been waiting` (ahora, for over an hour), `had been waiting` (ayer, by the time), `had worked` (almost every department), `has climbed` (she is adventurous; sail y go en esa frase también aceptan `sailed` y `gone`), `had climbed` y `gone` o `had gone` (by the time), `had been crying`.
+
+Tip: si el momento es ahora y hay `for`, `have been` + `-ing`. Si el momento es ayer y hay `for` o `by the time`, `had been` + `-ing`. Si cuenta cuántas cosas, `had` + participio, sin `-ing`. Si la persona sigue viva y no hay fecha, `has` + participio.
+
+#### EnglishPage, ejercicio 11. 30 sep 2026. 6/12.
+
+6 escritos, 6 correctos: `got`, `had already filled`, `tried`, `wanted`, `had had`, `went`. 6 en blanco.
+
+**submit.** `last week` cierra el tiempo. Es `submitted`.
+
+**show.** `When I showed up` es el momento de la escena. Past simple.
+
+**arrive.** `before me`: esas personas ya estaban allí antes de que tú llegaras. Es `had arrived`. Este es el hueco que pedía `had` y quedó vacío.
+
+**end.** El resultado de ese momento es `ended up`.
+
+**decide.** La decisión es el hecho de la historia. Es `decided`, no `had decided`.
+
+**look.** `before he looked` ya dice el orden. El informe viene después, en past simple: `looked`.
+
+`went to high school together` está bien. El instituto es un periodo cerrado, no “antes de decidir”.
+
+Tip: `already` o `before me` → `had` + participio. `last week` o el siguiente paso de la historia → past simple. Un hueco vacío cuenta igual que uno mal.
+
+#### Test-English, tres pasados. 30 sep 2026. 25/50.
+
+Galletas 12/20. Elección 5/10. Titanic 8/20.
+
+Lo que ya sale: la escena (`was watching`, `was walking`), varios hechos en orden (`went`, `poured`, `looked`, `disappeared`) y algunos `had` claros (`hadn't eaten`, `had taken`, `had already started`, `had been` con `for 50 years`).
+
+**Antes de la escena, y salió past simple.** `I ran a race in the morning` tiene que ser `I had run`: la carrera ya había terminado. `My mother gave me a jar` tiene que ser `had given`. `I ate only one cookie` tiene que ser `I had eaten`. En el Titanic, `saved` y `Bought` tienen que ser `had saved` y `had bought`. El naufragio, que quedó vacío, es `had sunk`.
+
+**El siguiente hecho, y salió had o continuous.** `I was opening the fridge` es `I opened`. `I had gone there quickly` es `I went`. `I was opening the door` es `I opened`. `had treated` es `treated`. `hang` es `hung`. `had stand up` es `stood up`. En la elección, `had hiden` es `hid`, y `had run away` es `ran`. Primero pasa una cosa y después la otra.
+
+**Estaba en marcha, y salió simple o had.** `I drank` cuando oyó el ruido es `I was drinking`. El mono `had eaten` es `was eating`. `had carried a gun` es `was carrying`. `had lied` es `was lying`. `hadn't paid attention` es `wasn't paying attention`. En el Titanic, `had carried` y `had hold` son `was carrying` y `was holding`. `played` / `had bitten` es `was playing` / `bit`.
+
+`sound` es un verbo de sentido: `it sounded`, no `had sounded`. `just` va entre `had` y el participio: `had just been`, no `just were`.
+
+Formas que el computador marca mal aunque el tiempo estuviera bien: `hidden`, no `hiden`; `hung`, no `hang`; `holding` / `held`, no `hold`; `stood`, no `stand`; `sunk`, no un hueco vacío.
+
+Tip para EnglishPage 11: ¿ya había terminado antes de esta escena? `had` + participio. ¿Es el siguiente hecho? past simple. ¿Estaba en marcha cuando pasó otra cosa? `was` o `were` + `-ing`.
 
 #### Test-English, simple o continuous. 27 sep 2026. 8/10.
 
@@ -271,11 +409,11 @@ Copia esto y rellena los números:
 1.1-1.4 Test-English: __ / __
 1.1-1.4 EnglishPage 5: 8 / 38
 1.5 Test-English: 8 / 10
-1.5 EnglishPage 7: __ / __
-1.6 Test-English: __ / __
-1.6 EnglishPage 11: __ / __
-1.7 EnglishPage 13: __ / __
-1.8 EnglishPage 14: __ / __  (o "no llegado")
+1.5 EnglishPage 7: 5 / 11
+1.6 Test-English: 25 / 50
+1.6 EnglishPage 11: 6 / 12
+1.7 EnglishPage 13: 8 / 10
+1.8 EnglishPage 14: 4 / 13
 Frases que me costaron:
 -
 ```

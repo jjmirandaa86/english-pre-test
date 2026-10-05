@@ -11,12 +11,13 @@ import {
   Row,
   Stack,
   Stat,
+  Swatch,
   Table,
   Text,
   useState,
 } from "cursor/canvas";
 
-type FeedbackView = "debil" | "simple" | "ep5" | "marcas" | "ex2" | "ex1";
+type FeedbackView = "debil" | "ep7" | "ep14" | "ep13" | "ep11" | "pasados" | "simple" | "ep5" | "marcas" | "ex2" | "ex1";
 
 const DAYS: {
   day: number;
@@ -24,35 +25,40 @@ const DAYS: {
   trailing: string;
   open?: boolean;
   rows: string[][];
+  scores?: string[];
   tones?: Array<"success" | "danger" | "warning" | "info" | "neutral" | undefined>;
 }[] = [
   {
     day: 1,
     title: "Contraste de perfectos",
-    trailing: "Simple o continuous: 8/10",
+    trailing: "Día 1",
+    scores: ["6/10", "6/10", "8/38", "10/10", "8/10", "5/11", "25/50", "6/12", "8/10", "4/13"],
     open: true,
-    tones: ["warning", "danger", "success", "success", "warning", "neutral", "neutral", "neutral"],
+    tones: ["danger", "danger", "danger", "success", "danger", "danger", "warning", "danger"],
     rows: [
       ["1.1 Marcadores", "ago, yesterday, last, in + año → past simple. Sin fecha, o today / this year → present perfect.", "Posición ok · el tiempo con ago ya falló", "https://test-english.com/grammar-points/b1/past-simple-present-perfect/", "Test-English", "Hecho · 6/10"],
       ["1.2 Experiencia", "Sin fecha, present perfect. El detalle, past simple. been = volviste. gone = sigues fuera.", "been ok · gone sigue abierto", "https://www.englishpage.com/verbpage/verbs5.htm", "EnglishPage 5", "Hecho · 8/38"],
       ["1.3 for / since", "since + momento o verbo en past simple. for + periodo.", "10/10", "https://test-english.com/grammar-points/b1/past-simple-present-perfect/", "Test-English", "Hecho · 6/10"],
       ["1.4 yet / already / just", "yet al final. already y just entre have y el participio.", "10/10", "https://test-english.com/grammar-points/b1-b2/already-still-yet-whats-the-difference/", "already / yet", "Hecho · 10/10"],
-      ["1.5 Simple o continuous", "Cuántos o terminado → simple. Cuánto tiempo → continuous. Estados sin -ing.", "8/10 · aceptable", "https://test-english.com/grammar-points/b1-b2/present-perfect-simple-continuous/", "Simple o continuous", "Hecho · 8/10"],
-      ["1.6 Past perfect simple", "had + participio. Un hecho anterior a otro pasado.", "Después", "https://test-english.com/grammar-points/b1/past-simple-past-continuous-past-perfect/", "Past perfect"],
-      ["1.7 Past perfect continuous", "had been + -ing. La duración explica un estado pasado.", "Después", "https://www.englishpage.com/verbpage/verbs13.htm", "EnglishPage 13"],
-      ["1.8 Los cuatro juntos", "Solo si 1.1–1.7 están en 75% o más.", "Después", "https://www.englishpage.com/verbpage/verbs14.htm", "EnglishPage 14"],
+      ["1.5 Simple o continuous", "Cuántos o terminado → simple. Cuánto tiempo → continuous. Estados sin -ing.", "8/10 · EnglishPage 7: 5/11", "https://test-english.com/grammar-points/b1-b2/present-perfect-simple-continuous/", "Simple o continuous", "Hecho · 8/10"],
+      ["1.6 Past perfect simple", "had + participio. Un hecho anterior a otro pasado.", "25/50 · EnglishPage 11: 6/12", "https://test-english.com/grammar-points/b1/past-simple-past-continuous-past-perfect/", "Past perfect", "Hecho · 25/50"],
+      ["1.7 Past perfect continuous", "had been + -ing. La duración explica un estado pasado.", "8/10 · aceptable", "https://www.englishpage.com/verbpage/verbs13.htm", "EnglishPage 13", "Hecho · 8/10"],
+      ["1.8 Los cuatro juntos", "Solo si 1.1–1.7 están en 75% o más.", "4/13 · punto débil", "https://www.englishpage.com/verbpage/verbs14.htm", "EnglishPage 14", "Hecho · 4/13"],
     ],
   },
   {
     day: 2,
     title: "Condicionales",
     trailing: "Día 2",
+    scores: ["7/10", "9/10", "11/15", "10/10", "10/10", "18/20", "10/10", "10/10", "15/20", "8/10", "10/10", "8/10", "9/10", "8/10"],
+    open: true,
+    tones: ["warning", "success", "warning", "warning", "warning"],
     rows: [
-      ["2.1 Primero", "If + presente, will.", "Pendiente", "https://test-english.com/grammar-points/b1/first-conditional-future-time-clauses/", "First"],
-      ["2.2 Segundo", "If + past simple, would. Nunca If I would.", "Pendiente", "https://test-english.com/grammar-points/b1/second-conditional-unreal-situations/", "Second"],
-      ["2.3 Tercero", "If + past perfect, would have + participio.", "Pendiente", "https://test-english.com/grammar-points/b1/third-conditional-past-unreal-situations/", "Third"],
-      ["2.4 Mixto", "If I had studied, I would be a doctor now.", "Pendiente", "https://test-english.com/grammar-points/b2/mixed-conditionals/", "Mixed"],
-      ["2.5 Sustitutos de if", "unless, provided (that), as long as, in case.", "Pendiente", "https://test-english.com/grammar-points/b1-b2/second-third-conditionals/", "unless"],
+      ["2.1 Primero", "If + presente, will. When, before, after, as soon as, until, once + presente, y la otra parte will, should o might.", "7/10 · ejercicio 2: 9/10 · ejercicio 3: 11/15", "https://test-english.com/grammar-points/b1/first-conditional-future-time-clauses/", "First", "Hecho · 27/35"],
+      ["2.2 Segundo", "If + past simple, would, could o might. Nunca If I would.", "10/10 · ejercicio 2: 10/10 · ejercicio 3: 18/20", "https://test-english.com/grammar-points/b1/second-conditional-unreal-situations/", "Second", "Hecho · 38/40"],
+      ["2.3 Tercero", "If + past perfect, would have, could have o might have + participio.", "10/10 · ejercicio 2: 10/10 · ejercicio 3: 15/20", "https://test-english.com/grammar-points/b1/third-conditional-past-unreal-situations/", "Third", "Hecho · 35/40"],
+      ["2.4 Mixto", "Pasado con resultado de ahora: if + past perfect, would + infinitivo. Ahora con resultado pasado: if + past simple, would have + participio.", "8/10 · ejercicio 2: 10/10 · ejercicio 3: 8/10", "https://test-english.com/grammar-points/b2/mixed-conditionals/", "Mixed", "Hecho · 26/30"],
+      ["2.5 Sustitutos de if", "unless ya significa if not. No le pongas otro not. Segundo: if + pasado, would. Tercero: if + past perfect, would have.", "9/10 · ejercicio 2: 8/10", "https://test-english.com/grammar-points/b1-b2/second-third-conditionals/", "unless", "Hecho · 17/20"],
     ],
   },
   {
@@ -106,7 +112,7 @@ const DAYS: {
     title: "Comparación y grado",
     trailing: "Día 7",
     rows: [
-      ["7.1 Comparativo", "not as easy as. the best.", "Pendiente", "https://test-english.com/grammar-points/b2/", "Índice B2"],
+      ["7.1 Comparativo", "not as easy as. the best. Los ejercicios están en el día 11.", "Día 11", "https://test-english.com/grammar-points/b1/comparative-superlative-adjectives-adverbs/", "Día 11"],
       ["7.2 so / such", "so + adjetivo + that. such a + sustantivo + that.", "Pendiente", "https://test-english.com/grammar-points/b1/so-such-such-a-so-much-so-many/", "so / such"],
       ["7.3 too / enough", "too + adjetivo + to. not + adjetivo + enough to.", "Pendiente", "https://test-english.com/grammar-points/a2/too-too-much-too-many-enough/", "too / enough"],
     ],
@@ -143,7 +149,253 @@ const DAYS: {
       ["10.4 get used to", "I am getting used to the accent. El proceso.", "Pendiente", "https://test-english.com/grammar-points/b1/usually-used-to-be-used-to-get-used-to/", "get used to"],
     ],
   },
+  {
+    day: 11,
+    title: "Comparativo y superlativo",
+    trailing: "Día 11",
+    rows: [
+      ["11.1 -er y more", "-er o more + than. Nunca more taller. better, worse, further.", "Pendiente", "https://test-english.com/grammar-points/b1/comparative-superlative-adjectives-adverbs/", "B1, 1"],
+      ["11.2 as ... as", "not as easy as. less ... than. much, a lot o a bit delante del comparativo.", "Pendiente", "https://test-english.com/grammar-points/b1/comparative-superlative-adjectives-adverbs/2/", "B1, 2"],
+      ["11.3 Superlativo", "the -est / the most. in + lugar. of + periodo o grupo. the most I have ever.", "Pendiente", "https://test-english.com/grammar-points/b1/comparative-superlative-adjectives-adverbs/3/", "B1, 3"],
+      ["11.4 the … the …", "The harder you work, the better you feel. the + comparativo, dos veces.", "Pendiente", "https://test-english.com/grammar-points/b1-b2/the-the-comparatives/", "the … the …, 1"],
+      ["11.5 the … the …, 2", "The more you read, the wiser you get. The sooner, the better.", "Pendiente", "https://test-english.com/grammar-points/b1-b2/the-the-comparatives/2/", "the … the …, 2"],
+      ["11.6 the … the …, 3", "the + comparativo + sujeto + verbo. be se puede omitir.", "Pendiente", "https://test-english.com/grammar-points/b1-b2/the-the-comparatives/3/", "the … the …, 3"],
+      ["11.7 Grado", "Diferencia grande: far, much, way. Pequeña: a bit, slightly. by far + superlativo.", "Pendiente", "https://test-english.com/grammar-points/b2/comparative-structures-modifying-comparatives/", "far / a bit"],
+    ],
+  },
 ];
+
+function tally(scores: string[]) {
+  let correct = 0;
+  let total = 0;
+  for (const score of scores) {
+    const match = score.match(/(\d+)\/(\d+)/);
+    if (!match) continue;
+    correct += Number(match[1]);
+    total += Number(match[2]);
+  }
+  const pct = total === 0 ? 0 : Math.round((correct / total) * 100);
+  return { correct, total, pct };
+}
+
+function toneFor(pct: number): "success" | "warning" | "danger" {
+  if (pct >= 90) return "success";
+  if (pct >= 75) return "warning";
+  return "danger";
+}
+
+function fractions(text: string): string[] {
+  return text.match(/\d+\/\d+/g) ?? [];
+}
+
+function lamp(score: string): "red" | "yellow" | "green" {
+  const match = score.match(/(\d+)\/(\d+)/);
+  const pct = match ? (Number(match[1]) / Number(match[2])) * 100 : 0;
+  if (pct >= 90) return "green";
+  if (pct >= 75) return "yellow";
+  return "red";
+}
+
+function Semaforo({ score }: { score: string }) {
+  const on = lamp(score);
+  return (
+    <Row gap={2} align="center">
+      <Swatch color="red" style={{ width: 8, height: 8, opacity: on === "red" ? 1 : 0.22 }} />
+      <Swatch color="yellow" style={{ width: 8, height: 8, opacity: on === "yellow" ? 1 : 0.22 }} />
+      <Swatch color="green" style={{ width: 8, height: 8, opacity: on === "green" ? 1 : 0.22 }} />
+    </Row>
+  );
+}
+
+function ScoreBits({ text }: { text: string }) {
+  const bits = text.split(/(\d+\/\d+)/);
+  return (
+    <Row gap={6} align="center" wrap>
+      {bits.map((bit, index) => {
+        if (/^\d+\/\d+$/.test(bit)) {
+          return (
+            <Row key={index} gap={4} align="center">
+              <Semaforo score={bit} />
+              <Text size="small" weight="semibold">{bit}</Text>
+            </Row>
+          );
+        }
+        if (!bit.trim()) return null;
+        return (
+          <Text key={index} size="small">{bit}</Text>
+        );
+      })}
+    </Row>
+  );
+}
+
+function DayTopics({ day }: { day: (typeof DAYS)[number] }) {
+  return (
+    <Stack gap={8}>
+      {day.scores?.length ? (
+        <Text size="small" tone="tertiary">
+          Rojo, bajo 75%. Amarillo, de 75% a 89%. Verde, 90% o más.
+        </Text>
+      ) : null}
+      <Table
+        headers={["Subtema", "Qué tiene que salir", "Estado", "Práctica"]}
+        rows={day.rows.map((row) => {
+          const sent = row[5] ?? "Sin enviar";
+          const shown = fractions(row[2]);
+          const extra = fractions(sent).filter((score) => !shown.includes(score));
+          return [
+            row[0],
+            row[1],
+            <ScoreBits text={row[2]} />,
+            <Row gap={8} align="center">
+              <Link href={row[3]}>{row[4]}</Link>
+              {extra.map((score) => (
+                <Semaforo key={score} score={score} />
+              ))}
+              <Pill size="sm" active={sent.startsWith("Hecho")}>
+                {sent}
+              </Pill>
+            </Row>,
+          ];
+        })}
+        rowTone={day.tones}
+        framed={false}
+      />
+    </Stack>
+  );
+}
+
+function TipsDia2() {
+  return (
+    <CollapsibleSection title="Qué mejorar" count={5}>
+      <Stack gap={8}>
+      <Table
+        headers={["Si ves", "Escribe"]}
+        framed={false}
+        rowTone={["neutral", "success", "success", "neutral", "neutral"]}
+        rows={[
+          ["when, if, before, as soon as, until, once", "Presente. La otra parte: will, should o might. Pregunta: Will you…?"],
+          ["Imaginario, ahora", "if + pasado (were). La otra: would + infinitivo."],
+          ["Imaginario, pasado", "if + had + participio. La otra: would have + participio. not en medio: would not have."],
+          ["Una mitad dice now", "Esa mitad es would o were. La mitad pasada es had o would have."],
+          ["unless", "unless = if not. Un solo not."],
+        ]}
+      />
+      <Text size="small" tone="tertiary">
+        Participios que fallaron: eaten, tidied, met, caught, worn. spoke, no spoak.
+      </Text>
+      </Stack>
+    </CollapsibleSection>
+  );
+}
+
+function FallosDia2() {
+  return (
+    <CollapsibleSection
+      title="Qué fallé"
+      count={22}
+      leading={<Swatch color="red" />}
+    >
+      <Stack gap={12}>
+        <Callout tone="warning" title="Segundo y tercero, ejercicio 2: 8/10. El día queda en 143/165, 87%">
+          would be es ahora: if + were. wouldn't have complained es pasado:
+          if + hadn't been. had been y wasn't están cruzados.
+        </Callout>
+        <Table
+          headers={["Elegiste", "Tiene que ser", "Por qué"]}
+          framed={false}
+          rowTone={["danger", "danger", "danger", "danger", "danger", "danger", "danger", "danger", "danger", "danger", "danger", "danger", "danger", "danger", "danger", "danger", "danger", "danger", "danger", "danger", "danger", "danger"]}
+          rows={[
+            ["If she had been more experienced, she would be more likely to get the job.", "If she were more experienced", "2.5, ejercicio 2, ítem 1. would be es ahora. El if del segundo condicional es were, no had been."],
+            ["If the food wasn't so bad, we wouldn't have complained.", "If the food hadn't been so bad", "2.5, ejercicio 2, ítem 2. wouldn't have complained es pasado. El if del tercero es hadn't been, no wasn't."],
+            ["unless she hadn't helped me", "unless she had helped me", "2.5, ítem 7. unless = if not. unless she had helped = if she hadn't helped. hadn't helped mete un not de más."],
+            ["If you had not eatten so much", "If you had not eaten so much", "Mixto, ejercicio 3, ítem 1. wouldn't be feeling sick now está bien. El participio de eat es eaten."],
+            ["We would have been top of the league", "We would be top of the league", "Mixto, ejercicio 3, ítem 4. We are second now. El resultado es ahora: would be. hadn't lost se queda."],
+            ["If you took a map, we wouldn't be lost now.", "If you had taken a map, we wouldn't be lost now.", "Mixto, ítem 4. wouldn't be lost now es el presente. El mapa es una acción pasada: had taken."],
+            ["If I hadn't been afraid of flying, we'd have travelled by plane.", "If I wasn't afraid of flying, we'd have travelled by plane.", "Mixto, ítem 8. El miedo sigue ahora: wasn't. El viaje ya no se hizo: we'd have travelled."],
+            ["would have tidy up", "would have tidied up", "Tercero, ejercicio 3, ítem 2. had known está bien. Después de would have va el participio: tidied."],
+            ["had not meet", "had not met", "Tercero, ejercicio 3, ítem 4. El participio de meet es met."],
+            ["would have not been born", "would not have been born", "Tercero, ejercicio 3, ítem 4. not va entre would y have: would not have been born."],
+            ["would not have catched", "would not have caught", "Tercero, ejercicio 3, ítem 8. had not made está bien. catch no lleva -ed: caught."],
+            ["would have wore", "would have worn", "Tercero, ejercicio 3, ítem 9. had known está bien. wore es past simple. El participio es worn."],
+            ["if I spoak English better", "if I spoke English better", "Segundo, ejercicio 3, ítem 4. would have está bien. El pasado de speak es spoke."],
+            ["If she does not criticise people", "If she didn't criticise people", "Segundo, ejercicio 3, ítem 8. would have está bien. if + presente es el primer condicional. Aquí es didn't criticise."],
+            ["we have to spend the night here", "we will have to spend the night here", "Ejercicio 3, ítem 3. does not arrive se queda en presente. El resultado es will have to, no have to."],
+            ["as soon as we will check in", "as soon as we check in", "Ejercicio 3, ítem 6. as soon as + presente. will no entra ahí."],
+            ["she look for a surf instructor", "she will look for a surf instructor", "Ejercicio 3, ítem 7. La otra parte de as soon as es will look for."],
+            ["you will water the plants", "will you water the plants", "Ejercicio 3, ítem 14. Es una pregunta. will va delante de you. if I promise se queda."],
+            ["before you will leave", "before you leave", "Ejercicio 2, ítem 7. before + presente. La petición ya está: can you close. will leave mete el futuro en el sitio del presente."],
+            ["I give you an answer when I have one.", "I will give you an answer when I have one.", "Ejercicio 1. when I have one se queda. El resultado es will give."],
+            ["If you don't find him, you call.", "If you don't find him, you should call.", "Ejercicio 1. don't find se queda. El resultado es un consejo: should call."],
+            ["If he knows that you are here, he tries to contact you.", "If he knows that you are here, he might try to contact you.", "Ejercicio 1. knows se queda. El resultado es una posibilidad: might try."],
+          ]}
+        />
+        <Text size="small" tone="tertiary">
+          Test-English, 5 oct 2026. Primero: 7/10, 9/10, 11/15. Segundo, ejercicio 3: 18/20. Tercero, ejercicio 3: 15/20. Mixto: 8/10, 10/10 y 8/10. Unless: 9/10 y 8/10.
+        </Text>
+      </Stack>
+    </CollapsibleSection>
+  );
+}
+
+function TipsDia1() {
+  return (
+    <CollapsibleSection title="Qué mejorar" count={5}>
+      <Stack gap={8}>
+        <Table
+          headers={["Si ves", "Escribe"]}
+          framed={false}
+          rowTone={["success", "neutral", "neutral", "neutral", "neutral"]}
+          rows={[
+            ["since, for, yet, already, just, ever, never", "La posición ya sale. just, already, ever y never van entre have y el participio."],
+            ["ago, yesterday, last, in + año", "Past simple. Sin fecha, y el periodo sigue: have o has. El hueco vacío cuenta mal."],
+            ["he, she, it, nobody", "has. I, you, we, they: have."],
+            ["Cuántas veces, o all day / for months", "Veces: have + participio. Duración: have been -ing. been = volviste. gone = sigue fuera."],
+            ["Ya pasó antes de la escena", "had + participio. El hecho siguiente: past simple. En marcha: was -ing."],
+          ]}
+        />
+      </Stack>
+    </CollapsibleSection>
+  );
+}
+
+function FallosDia1() {
+  return (
+    <CollapsibleSection
+      title="Qué fallé"
+      count={10}
+      leading={<Swatch color="red" />}
+    >
+      <Stack gap={12}>
+        <Callout tone="danger" title="Lo que se repite">
+          Si hay que escribir el verbo, sale el past simple o el hueco queda
+          vacío. he y nobody piden has, y no salen. had falta cuando el hecho
+          ya terminó antes de la escena, y sobra cuando es el siguiente hecho.
+        </Callout>
+        <Table
+          headers={["Nota", "Qué falló", "Tiene que salir"]}
+          framed={false}
+          rowTone={["danger", "danger", "danger", "danger", "warning", "danger", "danger", "danger", "warning", "danger"]}
+          rows={[
+            ["6/10 elegir, ejercicio 1", "recently, all his life, before, ever ate", "Have you had. has been, porque sigue vivo. Have you seen. have ever eaten."],
+            ["6/10 elegir, ejercicio 2", "been y gone al revés. Primero el detalle y después la noticia.", "Mary has gone. Tú have never been. Primero I've broken, después I broke it."],
+            ["ago, ítem 10", "I have stoped smoking two years ago.", "I stopped. ago cierra el tiempo aunque ya no fumes. stopped, doble p."],
+            ["8/38 EnglishPage 5", "30 huecos de present perfect vacíos. Los 8 escritos eran past simple y estaban bien.", "have o has si el periodo sigue abierto. Si la persona murió, past simple."],
+            ["8/10 simple o continuous", "zero times en continuous. all day en simple.", "have walked, porque cuenta veces. 've been doing, porque all day es duración."],
+            ["5/11 EnglishPage 7", "Los 6 del camarero vacíos. Los 5 de we están bien.", "has forgotten, has taken, has walked, has even noticed, has been running, hasn't looked."],
+            ["25/50 tres pasados", "ran y gave donde ya había pasado. had gone y was opening donde era el siguiente hecho. drank donde estaba en marcha.", "had run. opened y went. was drinking when I heard. El mono was eating."],
+            ["6/12 EnglishPage 11", "6 vacíos. Ninguno de los escritos está mal. went lo acepta la página.", "submitted, showed, had arrived, ended, decided, looked. before me es el que pide had."],
+            ["8/10 EnglishPage 13", "Dos vacíos. El resto de had y had been está bien.", "had been trying, por for months. gone, que la página también acepta como had gone."],
+            ["4/13 EnglishPage 14", "9 vacíos. sailed con by the time está bien: la página lo acepta.", "have been waiting ahora. had been waiting ayer. had worked, cuántos departamentos. has climbed. had been crying."],
+          ]}
+        />
+        <Text size="small" tone="tertiary">
+          Verde y fuera de esta lista: la posición de since, for, yet, already, just, ever y never, 10/10. just ya no se repite mal.
+        </Text>
+      </Stack>
+    </CollapsibleSection>
+  );
+}
 
 export default function B2ContrastePerfectos() {
   const [feedback, setFeedback] = useState<FeedbackView>("debil");
@@ -154,15 +406,21 @@ export default function B2ContrastePerfectos() {
         <H1>Gramática B2 por días</H1>
         <Text tone="secondary">
           Un tema por día. 75% deja el subtema aceptable. 90% lo cierra. Hoy
-          es el día 1.
+          es el día 2.
         </Text>
       </Stack>
 
       <Row gap={24} align="end">
-        <Stat value="8/10" label="Simple o continuous" tone="warning" />
-        <Stat value="8/38" label="EnglishPage 5, escribir el verbo" tone="danger" />
-        <Stat value="6/10" label="Elegir entre dos formas" tone="warning" />
-        <Stat value="10/10" label="Posición de marcadores" tone="success" />
+        {DAYS.flatMap((day) => {
+          if (!day.scores?.length) return [];
+          const { correct, total, pct } = tally(day.scores);
+          return [
+            <Row key={day.day} gap={8} align="center">
+              <Semaforo score={`${pct}/100`} />
+              <Stat value={`${pct}%`} label={`Día ${day.day}. ${correct} de ${total}`} tone={toneFor(pct)} />
+            </Row>,
+          ];
+        })}
       </Row>
 
       <H2>Temas y subopciones</H2>
@@ -174,30 +432,27 @@ export default function B2ContrastePerfectos() {
             count={day.rows.length}
             defaultOpen={day.open}
             trailing={
-              <Text size="small" tone="tertiary">
-                {day.trailing}
-              </Text>
+              day.scores?.length ? (
+                <Row gap={6} align="center">
+                  <Semaforo score={`${tally(day.scores).pct}/100`} />
+                  <Text size="small" weight="semibold">{tally(day.scores).pct}%</Text>
+                </Row>
+              ) : (
+                <Text size="small" tone="tertiary">{day.trailing}</Text>
+              )
             }
           >
-            <Table
-              headers={["Subtema", "Qué tiene que salir", "Estado", "Práctica"]}
-              rows={day.rows.map((row) => {
-                const sent = row[5] ?? "Sin enviar";
-                return [
-                  row[0],
-                  row[1],
-                  row[2],
-                  <Row gap={8} align="center">
-                    <Link href={row[3]}>{row[4]}</Link>
-                    <Pill size="sm" active={sent.startsWith("Hecho")}>
-                      {sent}
-                    </Pill>
-                  </Row>,
-                ];
-              })}
-              rowTone={day.tones}
-              framed={false}
-            />
+            {day.day === 1 || day.day === 2 ? (
+              <Stack gap={2}>
+                <CollapsibleSection title="Subtemas" count={day.rows.length}>
+                  <DayTopics day={day} />
+                </CollapsibleSection>
+                {day.day === 1 ? <TipsDia1 /> : <TipsDia2 />}
+                {day.day === 1 ? <FallosDia1 /> : <FallosDia2 />}
+              </Stack>
+            ) : (
+              <DayTopics day={day} />
+            )}
           </CollapsibleSection>
         ))}
       </Stack>
@@ -225,13 +480,10 @@ export default function B2ContrastePerfectos() {
 
       <H2>Páginas para el día 1</H2>
       <Text>
-        Hecho: [Test-English](https://test-english.com/grammar-points/b1/past-simple-present-perfect/) 6/10, marcadores 10/10, [EnglishPage 5](https://www.englishpage.com/verbpage/verbs5.htm) 8/38, y [simple o continuous](https://test-english.com/grammar-points/b1-b2/present-perfect-simple-continuous/) 8/10. El resto de esta lista está sin enviar.
+        Hecho: [Test-English](https://test-english.com/grammar-points/b1/past-simple-present-perfect/) 6/10, marcadores 10/10, [EnglishPage 5](https://www.englishpage.com/verbpage/verbs5.htm) 8/38, [simple o continuous](https://test-english.com/grammar-points/b1-b2/present-perfect-simple-continuous/) 8/10, y [tres pasados](https://test-english.com/grammar-points/b1/past-simple-past-continuous-past-perfect/) 25/50.
       </Text>
       <Text>
-        Siguiente del mismo contraste: [EnglishPage 7](https://www.englishpage.com/verbpage/verbs7.htm), sin enviar. Repetir solo los dos fallos del 8/10: cuántas veces en simple, all day en continuous.
-      </Text>
-      <Text>
-        Past perfect: [Test-English, tres pasados](https://test-english.com/grammar-points/b1/past-simple-past-continuous-past-perfect/), [EnglishPage 11](https://www.englishpage.com/verbpage/verbs11.htm), [EnglishPage 13](https://www.englishpage.com/verbpage/verbs13.htm). Los cuatro juntos, solo al final: [EnglishPage 14](https://www.englishpage.com/verbpage/verbs14.htm).
+        [EnglishPage 7](https://www.englishpage.com/verbpage/verbs7.htm), hecho, 5/11. Tres pasados, hecho, 25/50. [EnglishPage 11](https://www.englishpage.com/verbpage/verbs11.htm), hecho, 6/12. [EnglishPage 13](https://www.englishpage.com/verbpage/verbs13.htm), hecho, 8/10. [EnglishPage 14](https://www.englishpage.com/verbpage/verbs14.htm), hecho, 4/13. Los 8 tests del día 1 ya están enviados.
       </Text>
       <Text tone="secondary">
         Repaso si un test baja de 75%: [British Council, present perfect](https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2/present-perfect-simple-continuous), [British Council, past perfect](https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2/past-perfect), [Perfect English Grammar, ejercicio 1](https://www.perfect-english-grammar.com/past-simple-present-perfect-1.html).
@@ -241,15 +493,29 @@ export default function B2ContrastePerfectos() {
 
       <H2>Retroalimentación</H2>
       <Text tone="secondary">
-        Simple o continuous: 8/10. Fallaron “zero times” (simple) y “all day”
-        (continuous). En EnglishPage 5 escribiste 8 past simple y dejaste
-        vacíos los 30 de present perfect. Elegir entre dos formas sigue en
-        6/10. La posición de los marcadores sigue en 10/10.
+        EnglishPage 7: 5/11. Los 5 con we / have están bien. Los 6 del
+        camarero, que piden has, quedaron vacíos. Los 8 tests del día 1 ya
+        están enviados.
       </Text>
 
       <Row gap={8} wrap>
         <Pill active={feedback === "debil"} onClick={() => setFeedback("debil")}>
           Qué falla ahora
+        </Pill>
+        <Pill active={feedback === "ep7"} onClick={() => setFeedback("ep7")}>
+          EnglishPage 7 · 5/11
+        </Pill>
+        <Pill active={feedback === "ep14"} onClick={() => setFeedback("ep14")}>
+          EnglishPage 14 · 4/13
+        </Pill>
+        <Pill active={feedback === "ep13"} onClick={() => setFeedback("ep13")}>
+          EnglishPage 13 · 8/10
+        </Pill>
+        <Pill active={feedback === "ep11"} onClick={() => setFeedback("ep11")}>
+          EnglishPage 11 · 6/12
+        </Pill>
+        <Pill active={feedback === "pasados"} onClick={() => setFeedback("pasados")}>
+          Tres pasados · 25/50
         </Pill>
         <Pill active={feedback === "simple"} onClick={() => setFeedback("simple")}>
           Simple o continuous · 8/10
@@ -269,6 +535,11 @@ export default function B2ContrastePerfectos() {
       </Row>
 
       {feedback === "debil" ? <Debil /> : null}
+      {feedback === "ep7" ? <EnglishPage7 /> : null}
+      {feedback === "ep14" ? <EnglishPage14 /> : null}
+      {feedback === "ep13" ? <EnglishPage13 /> : null}
+      {feedback === "ep11" ? <EnglishPage11 /> : null}
+      {feedback === "pasados" ? <TresPasados /> : null}
       {feedback === "simple" ? <SimpleContinuous /> : null}
       {feedback === "ep5" ? <EnglishPage5 /> : null}
       {feedback === "marcas" ? <Marcadores /> : null}
@@ -281,6 +552,30 @@ export default function B2ContrastePerfectos() {
 function Debil() {
   return (
     <Stack gap={16}>
+      <Callout tone="danger" title="we sale con have. he, con has, no sale">
+        EnglishPage 7, 5/11. have been waiting, have already ordered, have
+        only been, have not ordered y have been sitting están bien. has
+        forgotten, has taken, has walked, has even noticed, has been
+        running y hasn't looked quedaron vacíos.
+      </Callout>
+      <Callout tone="warning" title="had been en la carta ya sale. En los cuatro, no">
+        EnglishPage 13, 8/10. Escribiste had been waiting, had had, had
+        arranged, had already picked, had almost given, had been y had
+        missed. Quedaron vacíos had been trying y had gone. EnglishPage 14,
+        4/13. had been working, had seen, sailed y had experienced están
+        bien. sailed lo acepta la página. has climbed no salió.
+      </Callout>
+      <Callout tone="danger" title="Si hay que escribirlo, la mitad se queda en blanco">
+        En EnglishPage 11 escribiste 6 verbos y los 6 están bien: got, had
+        already filled, tried, wanted, had had, went. Los otros 6 quedaron
+        vacíos. before me pedía had arrived, y no salió.
+      </Callout>
+      <Callout tone="danger" title="had solo si ya había terminado antes">
+        En los tres pasados, 25/50. Si el hecho es anterior a la escena, es
+        had + participio: had run, no ran. Si es el siguiente hecho de la
+        historia, es past simple: went, no had gone. Si estaba en marcha
+        cuando pasó otra cosa, es was + -ing: was drinking when I heard.
+      </Callout>
       <Callout tone="warning" title="Cuántas veces es simple. Cuánto tiempo es continuous">
         En el diálogo del perro, 8/10. “zero times” pide have walked, no have
         been walking. “all day” con un verbo de acción pide 've been doing, no
@@ -327,6 +622,238 @@ function Debil() {
       <Text size="small" tone="tertiary">
         La posición de just ya salió bien: I've just had one. El fallo viejo
         de just have cleaned no se repitió en el 10/10.
+      </Text>
+    </Stack>
+  );
+}
+
+function EnglishPage7() {
+  return (
+    <Stack gap={14}>
+      <Text tone="secondary">
+        5 escritos, 5 correctos, 6 en blanco. 5/11. Todos los de we están
+        bien. Todos los del camarero, en tercera persona, quedaron vacíos.
+      </Text>
+      <H3>Los 5 que escribiste</H3>
+      <Table
+        headers={["Tu forma", "Por qué está bien"]}
+        framed={false}
+        rowTone={["success", "success", "success", "success", "success"]}
+        rows={[
+          ["have been waiting for over half an hour", "Seguís ahí. for + duración hasta ahora es have been + -ing."],
+          ["have already ordered", "already, acción terminada. Simple, no continuous."],
+          ["have only been here for five or ten minutes", "be es estado. only va entre have y been. No lleva -ing."],
+          ["have not ordered yet", "yet, y todavía no ha pasado. Simple."],
+          ["have been sitting here for over half an hour", "Otra duración hasta ahora. have been + -ing."],
+        ]}
+      />
+      <H3>Los del camarero, vacíos</H3>
+      <Table
+        headers={["Hueco", "Forma", "Por qué"]}
+        rows={[
+          ["the waiter forget", "has forgotten", "El resultado es de ahora y no hay fecha. Tercera persona: has, no have."],
+          ["nobody take our order yet", "has taken", "yet, acción que no ha ocurrido. Simple. nobody es tercera persona."],
+          ["he walk by us twenty times", "has walked", "twenty times cuenta cuántas. Simple, no has been walking."],
+          ["he notice even", "has even noticed", "even va entre has y el participio. No os ha visto ni una vez."],
+          ["he run from table to table", "has been running", "La actividad sigue ahora, de mesa en mesa. has been + -ing."],
+          ["he look not once", "has not looked", "once cuenta una acción terminada que no ocurrió. Simple: hasn't looked."],
+        ]}
+      />
+      <Callout tone="info" title="La persona del verbo">
+        we, you, they y I van con have. he, she, it y nobody van con has.
+        Después eliges simple o continuous: times o yet, simple; for half an
+        hour o una actividad que sigue, have been o has been + -ing.
+      </Callout>
+      <Text size="small" tone="tertiary">
+        EnglishPage, ejercicio 7. 30 sep 2026. 5 de 11. Clave de la página.
+      </Text>
+    </Stack>
+  );
+}
+
+function EnglishPage14() {
+  return (
+    <Stack gap={14}>
+      <Text tone="secondary">
+        4 escritos, 4 correctos, 9 en blanco. 4/13. Ninguno de los que
+        escribiste está mal. sailed, con by the time, la página lo acepta.
+      </Text>
+      <H3>Los 4 que están bien</H3>
+      <Table
+        headers={["Tu forma", "Por qué está bien"]}
+        framed={false}
+        rowTone={["success", "success", "success", "success"]}
+        rows={[
+          ["had been working for more than ten years", "Lo despidieron el mes pasado. for + duración hasta ese momento es had been + -ing."],
+          ["had seen many pictures before I went", "before I went: las fotos son anteriores al viaje. had + participio."],
+          ["had experienced more by that age", "by the time she turned twenty-five cierra en el pasado. had + participio."],
+          ["sailed around the world", "En esa frase la página acepta sailed y también had sailed. by the time ya ordena los hechos."],
+        ]}
+      />
+      <H3>Los que quedaron vacíos</H3>
+      <Table
+        headers={["Hueco", "Forma", "Por qué"]}
+        rows={[
+          ["1. ahora, for over an hour", "have been waiting", "It is 9:30 y sigues ahí. Desde el pasado hasta ahora, con duración: have been + -ing."],
+          ["2. ayer, by the time", "had been waiting", "El mismo for over an hour, pero ayer, antes de que él llegara. had been + -ing."],
+          ["3. almost every department", "had worked", "Cuántos departamentos, no cuánto tiempo. Eso es had + participio, no had been working."],
+          ["5. She is adventurous", "has climbed. sailed o has sailed. gone o has gone", "Climb solo acepta has climbed. Sail y go también aceptan el pasado simple."],
+          ["6. climb y go", "had climbed. gone o had gone", "sail ya está bien. climb solo acepta had climbed."],
+          ["7. ojos rojos", "had been crying", "Llegó ayer con los ojos rojos. La acción larga acaba de terminar: had been + -ing."],
+        ]}
+      />
+      <Text size="small" tone="tertiary">
+        EnglishPage, ejercicio 14. 30 sep 2026. 4 de 13. Clave de la página, no solo la forma más completa.
+      </Text>
+    </Stack>
+  );
+}
+
+function EnglishPage13() {
+  return (
+    <Stack gap={14}>
+      <Text tone="secondary">
+        8 escritos, 8 correctos, 2 en blanco. 8/10. En esta carta el had y
+        el had been ya salen cuando el hueco está en medio de la frase.
+      </Text>
+      <H3>Los 8 que escribiste</H3>
+      <Table
+        headers={["Tu forma", "Por qué está bien"]}
+        framed={false}
+        rowTone={["success", "success", "success", "success", "success", "success", "success", "success"]}
+        rows={[
+          ["had had five cups", "Cinco tazas cuentan cuántas. had + participio, no continuous."],
+          ["had been waiting over an hour", "over an hour es duración, antes de irte. had been + -ing."],
+          ["had arranged to meet Kathy", "El plan ya estaba hecho antes de salir del café."],
+          ["had already picked up the tickets", "already: Kathy ya las tenía cuando llegaste."],
+          ["had been waiting for more than half an hour", "Otra duración hasta un momento pasado."],
+          ["had almost given up", "almost entre had y el participio. La acción ya casi había terminado."],
+          ["had been late several times", "several times cuenta cuántas veces, antes de esta noche. had been, no had been being."],
+          ["had missed several movies", "Esas películas ya se habían perdido antes de esta conversación."],
+        ]}
+      />
+      <H3>Los dos vacíos</H3>
+      <Table
+        headers={["Hueco", "Forma", "Por qué"]}
+        rows={[
+          ["try, for months", "had been trying", "for months es duración hasta anoche. La misma forma que had been waiting, que sí escribiste."],
+          ["go, after had almost given up", "had gone", "Iba a entrar sin vosotros. Es anterior a lo que te cuenta, así que had + gone."],
+        ]}
+      />
+      <Text size="small" tone="tertiary">
+        EnglishPage, ejercicio 13. 30 sep 2026. 8 de 10.
+      </Text>
+    </Stack>
+  );
+}
+
+function EnglishPage11() {
+  return (
+    <Stack gap={14}>
+      <Text tone="secondary">
+        6 escritos, 6 correctos, 6 en blanco. No hay una forma mal elegida.
+        Falta producir el verbo cuando la historia sigue, y el had cuando
+        alguien llegó antes que tú.
+      </Text>
+      <H3>Los 6 que escribiste</H3>
+      <Table
+        headers={["Tu forma", "Por qué está bien"]}
+        framed={false}
+        rowTone={["success", "success", "success", "success", "success", "success"]}
+        rows={[
+          ["got that apartment", "El hecho del que hablas ahora. Past simple."],
+          ["had already filled", "already marca que ya habían terminado el formulario antes de que llegaras."],
+          ["tried to fill out the form", "El siguiente hecho, después de que el casero te deja aplicar."],
+          ["wanted me to include references", "Lo que pedía el formulario en ese momento. Past simple."],
+          ["had had some problems", "Los problemas con el casero anterior son anteriores a rellenar este formulario. had + had."],
+          ["went to high school together", "Un periodo ya cerrado. No hace falta had: el instituto no es “antes de decidir”."],
+        ]}
+      />
+      <H3>Los que quedaron vacíos</H3>
+      <Table
+        headers={["Hueco", "Forma", "Por qué"]}
+        rows={[
+          ["submit, last week", "submitted", "last week cierra el tiempo. Es el siguiente dato, en past simple."],
+          ["show up", "showed", "When I showed up es el momento de la escena. Past simple."],
+          ["arrive, before me", "had arrived", "Esas veinte personas ya estaban allí antes de que tú llegaras. before me pide had."],
+          ["end up", "ended", "El resultado de ese momento: acabaste poniendo a tu padre. Past simple."],
+          ["decide", "decided", "La decisión es el hecho de la historia, no uno anterior. Past simple."],
+          ["look, before he looked", "looked", "before ya dice el orden. El informe es lo que vino después, en past simple."],
+        ]}
+      />
+      <Callout tone="info" title="Tip para el siguiente">
+        Si ves already o before me, escribe had + participio. Si ves last week,
+        o el verbo es el siguiente paso de la historia, escribe past simple.
+        Un hueco vacío cuenta igual que uno mal.
+      </Callout>
+      <Text size="small" tone="tertiary">
+        EnglishPage, ejercicio 11. 30 sep 2026. 6 escritos de 12.
+      </Text>
+    </Stack>
+  );
+}
+
+function TresPasados() {
+  return (
+    <Stack gap={18}>
+      <Text tone="secondary">
+        Misma página, tres ejercicios. Galletas 12/20, elección 5/10, Titanic
+        8/20. Total 25/50. La escena con was watching y was walking salió.
+        El had entra y sale en el momento que no toca.
+      </Text>
+      <H3>Galletas, 12/20</H3>
+      <Table
+        headers={["Elegiste", "Tiene que ser", "Por qué"]}
+        rows={[
+          ["I ran a race in the morning", "I had run", "La carrera fue por la mañana, antes de esta tarde. Ya había terminado."],
+          ["My mother gave me a jar", "My mother had given", "Las galletas ya estaban en casa antes de que entraras a la cocina."],
+          ["I was opening the fridge", "I opened", "Es el siguiente hecho, en orden: went, opened, poured. No estaba en marcha."],
+          ["I ate only one cookie", "I had eaten", "Esa galleta fue antes de encontrar el tarro vacío."],
+          ["I drank my glass of milk", "I was drinking", "Estabas bebiendo cuando oíste el ruido. La acción larga es continuous."],
+          ["I had gone there quickly", "I went", "Después del ruido vas al comedor. Es el siguiente hecho, no uno anterior."],
+          ["I was opening the door", "I opened", "Abrir la puerta es el hecho corto. El mono es el que estaba comiendo."],
+          ["A monkey had eaten the biscuits", "A monkey was eating", "Al abrir, el mono seguía comiendo en la silla. Estaba en marcha."],
+        ]}
+      />
+      <H3>Elección, 5/10</H3>
+      <Table
+        headers={["Elegiste", "Tiene que ser", "Por qué"]}
+        rows={[
+          ["he had hiden under the bed", "he hid", "Primero oyó a la policía y después se escondió. Es el siguiente hecho. El participio, además, es hidden."],
+          ["he had carried a gun", "he was carrying", "Llevaba el arma en ese momento, cuando lo arrestaron."],
+          ["he had lied", "he was lying", "Mentir estaba en marcha en el momento en que dijo que te quería."],
+          ["everybody had run away", "everybody ran", "Sacó el arma y entonces corrieron. Orden de la historia."],
+          ["I hadn't paid attention", "I wasn't paying attention", "No estabas atento cuando chocasteis. La acción larga es continuous."],
+        ]}
+      />
+      <Text size="small" tone="secondary">
+        Bien en esta parte: had already started, hadn't done, had been in a
+        fight, never went, y had been in the company for 50 years.
+      </Text>
+      <H3>Titanic, 8/20</H3>
+      <Table
+        headers={["Elegiste", "Tiene que ser", "Por qué"]}
+        rows={[
+          ["he had carried the tickets", "he was carrying", "Caminaba y llevaba los billetes en la mano. Las dos ponen la escena."],
+          ["he saved all the money", "he had saved", "Cuánto había ahorrado antes de esa tarde. had saved, no was saving."],
+          ["he Bought the tickets", "he had bought", "Earlier that afternoon: ya los había comprado antes de ir a casa."],
+          ["he had hold the tickets", "he was holding", "En ese momento los tenía en la mano. hold en continuous es holding. El pasado es held."],
+          ["it had sounded", "it sounded", "sound es un verbo de sentido. No va en continuous ni hace falta had."],
+          ["his son played / a dog had bitten him", "was playing / bit", "Jugaba cuando el perro lo mordió. La larga es continuous. La corta, past simple."],
+          ["the doctor had treated the wound", "treated", "El médico llegó y entonces curó. Siguiente hecho."],
+          ["he hang a yellow sheet", "he hung", "Mismo orden. El pasado de hang, aquí, es hung."],
+          ["they just were quarantined", "they had just been", "La cuarentena ya había ocurrido. just va entre had y el participio."],
+          ["he had stand up", "he stood up", "El barco desapareció y entonces se levantó. stood up, no had stand."],
+          ["the Titanic x", "had sunk", "El naufragio es anterior a la noticia. El hueco vacío cuenta como fallo. Participio: sunk."],
+        ]}
+      />
+      <Callout tone="info" title="Tres preguntas antes del hueco">
+        ¿Ya había terminado antes de esta escena? had + participio. ¿Es el
+        siguiente hecho, uno detrás de otro? past simple. ¿Estaba en marcha
+        cuando pasó otra cosa más corta? was o were + -ing.
+      </Callout>
+      <Text size="small" tone="tertiary">
+        Test-English, past simple, past continuous y past perfect. 30 sep 2026. 25 de 50.
       </Text>
     </Stack>
   );
